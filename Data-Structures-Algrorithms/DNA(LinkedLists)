@@ -1,0 +1,380 @@
+/*===================================================================
+ |  Author:       Donovan Roseau
+ |  Date:         3/1/16
+ |  Class:        CSCI 230 - 1
+ |  Assignment:   3
+ |  Task:         Create a double helix linked list in order to obtain
+ |                the expected outcome in each method
+ |
+ | Input:         Input is needed from the User when prompted. The
+ |                source of input is the keyboard
+ |
+ | Output:        Base Pairs from each helix or linked list
+ |
+ |  I certify that this code is my own work.
+  ===================================================================*/
+import java.util.Scanner;
+
+public class DNA {
+
+	Nucleotide leftHelix; //creates a new list
+	Nucleotide rightHelix;//creates a new list
+	int numElements; //nothing encountered yet
+
+	private class Nucleotide
+	{
+		Nucleotide next;//Referencce pointer to next node
+		Nucleotide across;//Reference pointer to node in adjacent list
+		Character base;//holds base pairs
+	}
+
+
+
+	public DNA()
+	{
+		numElements = 0;
+		Nucleotide leftHelix = new Nucleotide();
+		Nucleotide rightHelix = new Nucleotide();
+		leftHelix.next = null;//list is empty
+		rightHelix.next = null;//list is empty
+	}
+	/*
+	 * User inserts a new base pair into both lists at a valid index, without
+	 * removing any current base pairs.(If any)
+	 * @param index
+	 * @param basePair
+	 */
+
+	public void insert(int index, String basePair)
+	{
+		//base case
+		if(index < 0 || index > this.numElements)
+		{
+			throw new IndexOutOfBoundsException();
+		}
+		else
+		{
+			Nucleotide newLeftHelix = new Nucleotide();//creates new node
+			Nucleotide newRightHelix = new Nucleotide();//creates new node
+			newLeftHelix.base = basePair.charAt(0);//node holds first character
+			newRightHelix.base = basePair.charAt(1);//node holds second character
+
+			if (index == 0)
+			{
+				newLeftHelix.next = this.leftHelix;//reference point to next node
+				newRightHelix.next = this.rightHelix;//reference points to next node
+				newLeftHelix.across = newRightHelix;//reference points to its basePair
+				newRightHelix.across = newLeftHelix;//recerence points to its basePair
+				this.leftHelix = newLeftHelix;
+				this.rightHelix = newRightHelix;
+
+			}
+			else
+			{
+				Nucleotide left = this.leftHelix;
+				Nucleotide right = this.rightHelix;
+				for(int i = 0; i < index - 1; i++)//Goes to index of new node
+				{
+					left = left.next;//Iterates to index
+					right = right.next;//Iterates to index
+				}
+				newLeftHelix.next = left.next;//insert left new node
+				newRightHelix.next = right.next;//insert right new node
+
+				left.next = newLeftHelix;//connects to new base
+				right.next = newRightHelix;//connects to new base
+
+				newLeftHelix.across = newRightHelix;//connects to right helix
+				newRightHelix.across = newLeftHelix;//connects to left helix
+
+			}
+			numElements = numElements + 1;//Number of nodes increases by one
+		}
+	}
+
+	/*
+	 * Removes base pairs at the given index.
+	 * @param index
+	 * @return basePair
+	 */
+	public String remove(int index)
+	{
+		String bases = "";//Nothing encountered yet
+		if(index < 0 || index > numElements -1)//checks if index is valid
+		{
+			throw new IndexOutOfBoundsException();
+		}
+		else
+		{
+			if (index == 0)
+			{
+				Nucleotide right = this.rightHelix;
+				Nucleotide left = this.leftHelix;
+				Character baseR = right.base;//holds base of right helix
+				Character baseL = left.base;//holds base of left helix
+				bases = String.valueOf(baseL) + String.valueOf(baseR);//combines bases
+			}
+			else
+			{
+				Nucleotide right = this.rightHelix;
+				Nucleotide left = this.leftHelix;
+				for(int i = 0; i < index - 1; i++)//iterates to index
+				{
+					left = left.next;
+					right = right.next;
+				}
+				Nucleotide tempLeftNode = left.next;//temp node for left helix
+				Nucleotide tempRightNode = right.next;//temp node for right helix
+
+				Character baseR = tempRightNode.base;//saves right helix base
+				Character baseL = tempLeftNode.base;//saves left helix base
+				bases = String.valueOf(baseL) + String.valueOf(baseR);//combines bases
+
+				tempRightNode.next = null;//removes temp node from ritght helix
+				tempLeftNode.next = null;//removes temp node from left helix
+			}
+				numElements = numElements - 1;//Number of nodes decreases by one
+		}
+		return bases;
+	}
+
+	/*
+	 * Prints the base pairs for the double helix
+	 * @param startIndex
+	 * @param endIndex
+	 */
+	public void print(int startIndex, int endIndex)
+	{
+		Nucleotide left = this.leftHelix;
+		Nucleotide right = this.rightHelix;
+
+		if (startIndex < 0 || endIndex < 0 || startIndex > this.numElements
+				|| endIndex > this.numElements)
+		{
+			System.out.println("You have an error with your input!");
+		}
+		else
+		{
+			for(int i = 0; i < startIndex; i++)//iterates to startIndex
+			{
+				left = left.next;
+				right = right.next;
+			}
+
+			for(int i = startIndex; i < endIndex; i++)//iterates to endIndex
+			{
+				System.out.print(left.base);//Left base prints
+				System.out.print(right.base);//right base pringts
+				left = left.next;
+				right = right.next;
+			}
+		}
+	}
+
+	/*
+	 * Makes both helices empty values
+	 */
+	public void clear()
+	{
+		this.numElements = 0;
+		this.leftHelix = null;
+		this.rightHelix = null;
+	}
+
+	/*
+	 * Returns a boolean, specifying whether or not the helices are empty nodes
+	 */
+	public boolean isEmpty()
+	{
+		return this.numElements == 0;
+	}
+
+	/*
+	 * Returns the number of nodes in each helix
+	 */
+	public int getLength()
+	{
+		return this.numElements;
+	}
+
+	/*
+	 * Finds a specific basePair and returns its index
+	 * @param basePair
+	 * @return index of basePair
+	 */
+	public int find(String basePair)
+	{
+		int index = -1;//Keeps track of which index basePair appears
+		Nucleotide left;
+		left = this.leftHelix;
+		Nucleotide right;
+		right = this.rightHelix;
+		boolean found = false;
+		while(found != true)
+		{
+			if(left == null && right == null)//checks if helices are empty
+			{
+				found = true;
+				index = -1;
+			}
+			else
+			{
+				if(left.base.equals(basePair.charAt(0))
+						&& right.base.equals(basePair.charAt(1)))//compares basePairs
+				{
+					found = true;//basePair found
+					index = index + 1;//Index increases by one
+				}
+				else//if not found yet, iterates to next node
+				{
+					left = left.next;
+					right = right.next;
+					index = index + 1;
+				}
+			}
+		}
+		return index;
+
+
+	}
+
+	/*
+	 * Prints each base in the left helix
+	 */
+	public void printLeft()
+	{
+		Nucleotide left = this.leftHelix;
+		while(left != null)
+		{
+			System.out.print(left.base);
+			left = left.next;
+		}
+	}
+
+	/*
+	 * Prints each base of right helix
+	 */
+	public void printRight()
+	{
+		Nucleotide right = this.rightHelix;
+		while(right != null)
+		{
+			System.out.print(right.base);
+			right = right.next;
+		}
+
+	}
+
+	/*
+	 * Prints the base pairs at a specific index. If helix is zero, the prints the
+	 * bases from left to right. If the helix is one, then it prints the bases from
+	 * right to left.
+	 * @param index
+	 * @param helix
+	 */
+	public void printBasePair(int index, int helix)
+	{
+		if (index < 0 || index > this.numElements)
+		{
+			throw new IndexOutOfBoundsException();
+		}
+		else
+		{
+			Nucleotide left = this.leftHelix;
+			Nucleotide right = this.rightHelix;
+			String basePair = "";//Nothing encountered yet
+
+			for (int i = 0; i < index; i++)//iterates to start index
+			{
+				right = right.next;
+				left = left.next;
+			}
+
+			if(helix == 0)//Tells to print basePairs left to right
+			{
+				Character baseL = left.base;//Holds left base
+				Character baseR = right.base;//Holds right base
+				basePair = String.valueOf(baseL) + String.valueOf(baseR);//combine bases
+				System.out.println(basePair);
+			}
+			else if(helix ==1)//Tells to print basePairs right to left;
+			{
+				Character baseL = left.base;
+				Character baseR = right.base;
+				basePair = String.valueOf(baseR) + String.valueOf(baseL);//combines bases
+				System.out.println(basePair);
+			}
+			else
+			{
+				throw new IndexOutOfBoundsException();
+			}
+		}
+	}
+
+	public static void main(String[] args)
+	{
+		Scanner in = new Scanner(System.in);
+		int method;
+		DNA dna = new DNA();
+		System.out.println("How many lines of input? ");
+		int numOfInput = in.nextInt();
+		for(int i = 0; i < numOfInput; i++)
+		{
+			System.out.println("Which method to call? ");
+			method = in.nextInt();
+
+			if (method == 1)
+			{
+				int index = in.nextInt();
+				String basePair = in.next();
+				dna.insert(index, basePair);
+			}
+			if(method == 2)
+			{
+				int index = in.nextInt();
+				dna.remove(index);
+			}
+			if(method == 3)
+			{
+				int startIndex = in.nextInt();
+				int endIndex = in.nextInt();
+				dna.print(startIndex, endIndex);
+			}
+			if(method == 4)
+			{
+				dna.clear();
+			}
+			if (method == 5)
+			{
+				dna.isEmpty();
+			}
+			if (method == 6)
+			{
+				dna.getLength();
+			}
+			if (method == 7)
+			{
+				String basePair = in.next();
+				dna.find(basePair);
+			}
+			if (method == 8)
+			{
+				dna.printLeft();
+			}
+			if (method == 9)
+			{
+				dna.printRight();
+			}
+			if (method == 10)
+			{
+				int index = in.nextInt();
+				int helix = in.nextInt();
+				dna.printBasePair(index, helix);
+			}
+
+		}
+		in.close();
+
+	}
+}
+
