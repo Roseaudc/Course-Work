@@ -1,0 +1,37 @@
+#lang racket
+;1
+(define (make_list_of_size n e)
+(cond
+  ((eqv? n 0) '())
+  (else (cons e (make_list_of_size (- n 1) e)))))
+
+;2
+(define (d-term_list TL x)
+  (cond ((null? TL) '())
+        (else(map(lambda(T)(d-term T x))TL))))
+;3
+
+;4a
+(define (product? E x)
+  (cond ((null? E)#f)
+        ((null?(cdr E))#f)
+        ((null?(cddr E))#f)
+        ((and(eqv?(car E) '*)(polynomial?(caddr E) x)(polynomial(cadr E) x))#t)
+        (else #f)))
+
+;4b
+(define (d-product E x)
+  (cond
+    ((product? E x) (list '+(list '* (cadr E)(d-polynomial (caddr E) x))(list '* (caddr E)(d-polynomial (cadr E) x))))))
+
+;5a
+(define (quotient? E x)
+  (cond ((null? E)#f)
+        ((null?(cdr E))#f)
+        ((null?(cddr E))#f)
+        ((and(eqv?(car E) '/)(polynomial?(caddr E) x)(polynomial?(cadr E) x))#t)
+        (else #f)))
+;5b
+(define (d-quotient E x)
+  (cond
+    ((quotient? E x) (list '/ (list '- (list '* (caddr E)(d-polynomial (cadr E) x))(list '* (cadr E)(d-polynomial (caddr E) x)))(list '* (caddr E) (caddr E))))))
