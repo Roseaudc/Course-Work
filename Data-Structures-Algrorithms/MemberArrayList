@@ -1,0 +1,119 @@
+import java.util.ArrayList;
+ 
+public class MemberArrayList {
+    private ArrayList<Integer> friendsScore = new ArrayList<Integer>();
+    private ArrayList<String> friendsID = new ArrayList<String>();
+    // Add a friend with ID with the score into friends.
+    public void addFriend(String friendID, int score) {
+        // TODO
+    	friendsID.add(friendID);
+    	friendsScore.add(score);
+    	
+    }
+    // Removes a friend with friendID, but you cannot use indexOf. Only methods you can use: size, equals, get, remove
+    public void removeFriend(String friendID) {
+        // TODO
+    	for (int i = 0; i < friendsID.size()-1; i++)
+    	{
+    		if (friendsID.get(i).equals(friendID))
+    		{
+    			friendsID.remove(i);
+    			friendsScore.remove(i);
+    		}
+    	}
+    }
+    // Get the scores of first 10 friends added
+    public int [] getScores10() {
+        // TODO
+    	int [] scores = new int[10];
+    	for (int i = 0; i < 10;i++)
+    	{
+    		scores[i] = friendsScore.get(i);
+    	}
+    	return scores;
+    }
+    // Get the scores of last 10 friends added. 
+    public int [] getScoresLast10() {
+        // TODO
+    	int [] scores = new int[10];
+    	int j = 0;
+    	for (int i = friendsScore.size() - 1; i > friendsScore.size()-11; i--)
+    	{
+    		scores[j] = friendsScore.get(i);
+    		j++;
+    	}
+    	return scores;
+    	
+    }
+    // Get the scores of the friends in the array, but you cannot use indexOf function. You can only use size, get, equals, intValue
+    public int [] getScores(String [] friendIDs) {
+        // TODO
+    	int [] scores = new int[friendIDs.length];
+    	for (int i = 0; i <= friendsID.size()-1; i++)
+    	{
+    		for (int j = 0; j < friendIDs.length;j++)
+    		{
+    			if (friendIDs[j].equals(friendsID.get(i)))
+    			{
+    			  scores[j] = friendsScore.get(i);
+    			}
+    		}
+    	}
+    	return scores;
+    	
+    }
+ 
+    public static void main(String[] args) {
+        MemberArrayList member = new MemberArrayList();
+        member.addFriend("Paul", 3);
+        member.addFriend("Peter", 1);
+        member.addFriend("Mary", 2);
+        member.addFriend("John", 4);
+        member.addFriend("Karen", 7);
+        member.addFriend("Kevin", 3);
+        member.addFriend("Walter", 1);
+ 
+        member.removeFriend("Mary");
+        member.removeFriend("Walter");
+ 
+        member.addFriend("Steven", 21);
+        member.addFriend("Kelly", 9);
+        member.addFriend("Kaitlin", -5);
+        member.addFriend("Bea", 77);
+        member.addFriend("Max", 32);
+ 
+        System.out.println("Test 1");
+        String [] friendIDs = {"Paul","Kevin","Steven","Max"};
+        int [] scores = member.getScores(friendIDs);
+        for (int i = 0; i < scores.length; i++)
+            System.out.println(friendIDs[i]+" "+scores[i]);
+ 
+        System.out.println("Test 2");
+        scores = member.getScores10();
+        for (int i = 0; i < scores.length; i++)
+            System.out.println(scores[i]);
+ 
+        System.out.println("Test 3");
+        scores = member.getScoresLast10();
+        for (int i = 0; i < scores.length; i++)
+            System.out.println(scores[i]);
+ 
+        member.removeFriend("Bea");
+ 
+        member.addFriend("Eric", -1);
+        member.addFriend("Abby", -2);
+        member.addFriend("Jacob", 3);
+        member.addFriend("Blake", 8);
+ 
+        System.out.println("Test 4");
+        scores = member.getScores10();
+        for (int i = 0; i < scores.length; i++)
+            System.out.println(scores[i]);
+ 
+        System.out.println("Test 5");
+        scores = member.getScoresLast10();
+        for (int i = 0; i < scores.length; i++)
+            System.out.println(scores[i]);
+    }
+ 
+}
