@@ -1,0 +1,129 @@
+import java.util.Scanner;
+public class Gerrymander {
+	/*===================================================================
+	 |  Author:       Donovan Roseau
+	 |  Date:         2/9/16
+	 |  Class:        CSCI 230 - 1
+	 |  Assignment:   2
+	 |  Task:         Use recursion in order to count the number of districts
+	 |                in a 2d array
+	 |
+	 | Input:         Input is needed from the User when prompted. The
+	 |                source of input is the keyboard
+	 |
+	 | Output:        If method 1 is called by user, then the output will
+	 |                be an integer.
+	 |
+	 |  I certify that this code is my own work.
+	  ===================================================================*/
+
+	/*
+	 * Checks each index in list for an asterisk and to check if it has been visited
+	 * @param list a 2d array of *'s and 0's
+	 * @returns the number of districts in the array
+	 */
+	public int countDistricts(char[][]list)
+	{
+
+		int districts = 0; //Nothing encountered yet
+		boolean[][] position = new boolean[list.length][list[0].length];//checks if index is visited
+
+		if (list.length == 0 || list == null)//base case
+		{
+			return 0;
+		}
+
+		for (int rows = 0; rows < list.length; rows++)//Iterates through list
+		{
+			for (int cols = 0; cols < list[0].length; cols++)
+			{
+				if(!position[rows][cols] && list[rows][cols] == '*')//District adds one is index not visited and has asterisk
+				{
+					checkIndex(rows,cols,list,position);//checks if surrounding indexes have an asterisk
+					districts++;
+				}
+			}
+		}
+		return districts;
+	}
+
+	/*
+	 * @param rows gives number of rows in array
+	 * @param cols gives number of columns in array
+	 * @param list creates a 2d array
+	 * @param position creates an array that checks the indexes of list
+	 *
+	 */
+	public void checkIndex(int rows,int cols, char[][]list, boolean[][]position)
+	{
+		if (rows < 0 || rows >= list.length || cols < 0 || cols >= list[0].length //keeps position in bounds and
+		 || position[rows][cols] || list[rows][cols] == '0')	                  //checks if 0 is at index
+		{
+			return;
+		}
+		else
+		{
+			position[rows][cols] = true;
+			checkIndex(rows - 1, cols, list, position);//checks the row above the index
+			checkIndex(rows + 1, cols, list, position);//checks the row below the index
+			checkIndex(rows, cols - 1, list, position);//checks the column to the left of the index
+			checkIndex(rows, cols+ 1, list, position);//checks the column to the right of the index
+		}
+	}
+
+	/*
+	 * prompts user input to choose which method to execute
+	 */
+	public static void main(String[] args)
+	{
+		Gerrymander gerr = new Gerrymander();//created a Gerrymander object
+		Scanner in = new Scanner(System.in);//creates a scanner
+		int rows;//nothing encountered yet
+		int cols;//nothing encountered yet
+		int method;//nothing encountered yet
+		int index;//nothing encountered yet
+		boolean runIt = false;//base case for while loop
+
+		System.out.println("What method to call? ");
+		method = in.nextInt();
+		if (method == 1)
+		{
+			System.out.println("How many rows and columns do you want? ");
+			rows = in.nextInt();
+			cols = in.nextInt();
+			char list[][] = new char[rows][cols];
+			System.out.println("Where do you want to put your asterisks? ");
+			while(runIt == false)//Puts asterisks in indices until condition is met
+			{
+				index = in.nextInt();
+				if (index < 0)
+				{
+					runIt = true;
+				}
+				else if(index>=0 && index < cols)
+				{
+					list[0][index] = '*';
+				}
+				else
+				{
+					list[index/cols][index%cols] = '*';
+				}
+
+
+			}
+			for(int i = 0; i < list.length; i++)//loop through array and puts zeroes in empty indices
+	    	{
+	    		for (int j = 0; j < list[0].length; j++)
+	    			if (list[i][j] != '*')
+	    			{
+	    				list[i][j] = '0';
+	    			}
+	    	}
+			System.out.println(gerr.countDistricts(list));
+		}
+
+
+		in.close();
+	}
+
+}
