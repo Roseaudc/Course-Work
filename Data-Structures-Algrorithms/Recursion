@@ -1,0 +1,230 @@
+/*===================================================================
+ |  Author:       Donovan Roseau
+ |  Date:         1/21/16
+ |  Class:        CSCI 230 - 1
+ |  Assignment:   1
+ |  Task:         Use recursion in each method in order to obtain
+ |                the expected outcome
+ |
+ | Input:         Input is needed from the User when prompted. The
+ |                source of input is the keyboard
+ |
+ | Output:        If method 1 is called by user, then the output will
+ |                be a boolean. But every other method will return an
+ |                integer
+ |
+ |  I certify that this code is my own work, but I received some help
+ |  from Paul Kyser.
+  ===================================================================*/
+
+import java.util.Arrays;
+import java.util.Scanner;
+import java.util.ArrayList;
+
+public class Recursion {
+
+	/*
+	 * Checks if an item is a member of the list. Begins at startIndex
+	 * @param list an array of integers
+	 * @param item the integer being searched for in the list
+	 * @param startIndex the index at which to start at
+	 * @return true if item is a member of the list, else if not
+	 */
+	public boolean isMember(int[] list, int item, int startIndex)
+	{
+		boolean result; // initialize variable
+
+		if ( startIndex == list.length ) // Base case
+		{
+			return result = false;
+		}
+
+		else if (list[startIndex] == item) // checks if element is equal to item
+		{
+			result = true;
+		}
+
+		else
+		{
+			result = isMember(list,item,startIndex + 1); // If not equal, call function
+		}
+
+		return result;
+
+	}
+
+	/*
+	 * counts the number of elements in a list, beginning at the startIndex
+	 * and finishing a the last element
+	 * @param list an array of integers
+	 * @param startIndex the index at which to start at
+	 * @return the length of the list from startIndex to the end
+	 */
+	public int numberItems(int[] list, int startIndex)
+	{
+		int listLength; // Initialize variable
+
+		if (startIndex == list.length) // Base case
+		{
+			listLength = 0;
+		}
+
+		else
+		{
+			listLength = 1 + numberItems(list, startIndex + 1);
+		}
+
+		return listLength;
+
+	}
+
+	/*
+	 * counts the number of elements in a list, beginning at the startIndex
+	 * and finishing at the first element
+	 * @param list an array of integers
+	 * @param startIndex the index at which to start at
+	 * @return the length of the list from startIndex to the beginning
+	 */
+	public int numberItemsReversed(int[] list, int startIndex )
+	{
+
+		int lstLength; // Initialize variable
+
+		if (startIndex < 0) // Base case
+		{
+			lstLength = 0;
+		}
+
+		else
+		{
+				lstLength = 1 + numberItemsReversed(list,startIndex -1);
+		}
+
+		return lstLength;
+	}
+
+	/*
+	 * counts the number of elements in a list, beginning at the startIndex
+	 * and finishing a the last element
+	 * @param list an array of integers
+	 * @param startIndex the index at which to start at
+	 * @param item the integer being searched for in the list
+	 * @return the number of occurrences item has in the list
+	 */
+	public int countItem(int[] list, int item, int startIndex)
+	{
+		int result; // Initialize variable
+
+		if (startIndex == list.length) // Base case
+		{
+			result = 0;
+		}
+
+		else if (list[startIndex] == item)
+		{
+			result = 1 + countItem(list, item, startIndex + 1);
+		}
+
+		else
+		{
+			result = countItem(list, item, startIndex + 1);
+		}
+
+		return result;
+	}
+
+	/*
+	 * Prompts user input to choose which method to execute
+	 */
+	public static void main(String[] args)
+	{
+		int method; //Initialize method
+		int item; //Initialize item
+		int startIndex; //Initialize startIndex
+		int intOfList; //Initialize intOfList
+		Scanner in = new Scanner(System.in); // Initialize scanner
+		Recursion rec = new Recursion(); // creates a recursion object
+
+		System.out.println("What method to call? ");
+		method = in.nextInt();
+
+		if (method == 1)
+		{
+			System.out.println("How many numbers are in the list? ");
+			intOfList = in.nextInt();
+			int list[] = new int[intOfList]; //creates new array
+			System.out.println("What are the numbers in your list? ");
+
+			for (int i = 0; i < intOfList; i++)
+			{
+				list[i] = in.nextInt();
+			}
+
+			System.out.println("What is the item you're looking for? ");
+			item = in.nextInt();
+			System.out.println("What is the starting index? ");
+			startIndex = in.nextInt();
+			System.out.println(rec.isMember(list, item, startIndex));
+		}
+
+		if (method == 2)
+		{
+			System.out.println("How many numbers are in the list? ");
+			intOfList = in.nextInt();
+			int list[] = new int[intOfList]; // creates new array
+			System.out.println("What are the numbers in your list? ");
+
+			for (int i = 0; i < intOfList; i++)
+			{
+				list[i] = in.nextInt();
+			}
+
+			System.out.println("What is the starting index? ");
+			startIndex = in.nextInt();
+			System.out.println(rec.numberItems(list,startIndex));
+
+		}
+
+		if (method == 3)
+		{
+			System.out.println("How many numbers are in the list? ");
+			intOfList = in.nextInt();
+			int list[] = new int[intOfList]; //creates new array
+			System.out.println("What are the numbers in your list? ");
+
+			for (int i = 0; i < intOfList; i++)
+			{
+				list[i] = in.nextInt();
+			}
+
+			System.out.println("What is the starting index? ");
+			startIndex = in.nextInt();
+			System.out.println(rec.numberItemsReversed(list,startIndex));
+
+		}
+
+		if (method == 4)
+		{
+			System.out.println("How many numbers are in the list? ");
+			intOfList = in.nextInt();
+			int list[] = new int[intOfList]; //creates new array
+			System.out.println("What are the numbers in your list? ");
+
+			for (int i = 0; i < intOfList; i++)
+			{
+				list[i] = in.nextInt();
+			}
+
+			System.out.println("What is the item you're looking for? ");
+			item = in.nextInt();
+			System.out.println("What is the starting index? ");
+			startIndex = in.nextInt();
+			System.out.println(rec.countItem(list, item, startIndex));
+		}
+		in.close();
+
+	}
+
+
+
+}
