@@ -1,0 +1,21 @@
+Our team has decided to use Martus because of how the open-source project allowed individuals in
+countries that are experiencing war or any other type of conflict to report firsthand what they see. It is
+also written in a language, Java, each of our group members are familiar with, so that makes it easier to
+read and test code. In the beginning, we attempted to run the desktop version of Martus but ran into
+difficulty when trying to download eclipse on a virtual machine. Operating Eclipse was time
+consuming due to it "moving slow" and not compiling the code since Martus was created on an older
+version of Eclipse. We also considered using an older version of Martus as our project since we were
+able to get it to run, however, we could not find the source code for it.
+We decided to change from the desktop to the android app version of Martus since the desktop
+version was to difficult to compile. The project has a directory with instructions to set up and run the
+app in the their repository. The instruction were straightforward as what the user should do. First we
+had to download the Android Studios onto Linux. One of our teammates ran into a small problem at
+this point and had to install a few libraries in order to finish the download. Here are the lines of code if
+you encounter the same problem: sudo apt-get install lib32z1 lib32ncurses5 lib32stdc++6. After,
+download and import the source code from the Martus repository. The code ran smoothly afterwards,
+but Android would freeze from time to time.
+After sometime exploring the project we were able to find some gradle scripts that would run several
+tests for the project, and return in the event log whether or not certain sections of tests passed. While
+we were able to find the individual classes that would test a certain condition, we have not been able to
+run them individually and record the results. One of the problems that would arise when trying to run
+some tests individually without gradle was a runtime error with the message “Stub!”.
