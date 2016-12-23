@@ -1,0 +1,17 @@
+# Test Case Number
+# Requirement
+# Component Path
+# Component being tested
+# Dependencies
+# Method being tested
+# Input (year,month,day;year,month,day)
+# Expected Output
+003
+The method should return an integer, that shows the number of days between date1 and date2
+project/src/
+org/hrvd/util/date/Flexidate
+project/src/org/hrvd/util/*/*.java
+getRange
+2000,5,5;2000,5,5
+0
+

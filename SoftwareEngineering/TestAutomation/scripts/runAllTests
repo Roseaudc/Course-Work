@@ -1,0 +1,214 @@
+#!/bin/bash
+
+FILECOUNTER=0;
+FILES=testCases/*
+SOMECOUNTER=1;
+#read through testcases 
+for f in $FILES; do
+    LINECOUNTER=1
+    #store each line of the test case
+    while read -r line; do
+        [[ "$line" =~ ^#.*$ ]] && continue
+           LINES[$LINECOUNTER]=$line
+           ((LINECOUNTER++))
+        
+    done < $f
+    
+    #give line more descriptive name
+    TESTCASE=${LINES[1]}
+    DESCRIPTION=${LINES[2]}
+    PATHTODRIVER=${LINES[3]}
+    COMPONENT=${LINES[4]}
+    DEPENDENCIES=${LINES[5]}
+    METHOD=${LINES[6]}
+    INPUT=${LINES[7]}
+    EXPECTEDOUTPUT=${LINES[8]}
+
+    # write expected output to oracle files
+    if [[ "$SOMECOUNTER" -lt "10" ]]; then
+        echo $EXPECTEDOUTPUT > "oracles/testCase0${SOMECOUNTER}Oracle.txt"
+    fi
+
+    if [[ "$SOMECOUNTER" -ge "10" ]]; then
+        echo $EXPECTEDOUTPUT > "oracles/testCase${SOMECOUNTER}Oracle.txt"
+    fi
+
+    TESTDRIVER="${COMPONENT}Driver"
+
+    # if the driver and its dependincies haven't been compiled do so
+    if [[ ! " ${COMPILEDDEPENDENCIES[@]} " =~ " ${DEPENDENCIES} " ]]; then
+      javac -Xlint:unchecked $DEPENDENCIES
+      echo "compiling ${DEPENDENCIES}"
+      COMPILEDDEPENDENCIES[$FILECOUNTER]=$DEPENDENCIES
+    fi
+    
+    cd $PATHTODRIVER
+    # execute test driver 
+    java $TESTDRIVER "$METHOD" "$INPUT" "$TESTCASE"
+    
+    # return to the top directory
+    cd - > /dev/null
+
+    ((FILECOUNTER++))
+    ((SOMECOUNTER++))
+done
+
+#read results from test driver and store in array
+COUNTER=1
+FILES=temp/*
+for f in $FILES; do 
+    while read -r result; do
+          RESULTS[$COUNTER]=$result
+    done < $f
+    ((COUNTER++))
+done
+
+#read test case oracles and store in array
+COUNTER=1
+ORACLEFILES=oracles/*
+for f in $ORACLEFILES; do
+  while read -r oracle; do
+    ORACLES[$COUNTER]=$oracle
+  done < $f
+  ((COUNTER++))
+done
+
+# create test results display 
+cat >testresults.html <<EOF
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+table {
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 1px solid black;
+    border-color: #aaaaaa;
+    border-width: 3px;
+    padding: 10px;
+}
+th {
+background-color: #aaaaaa;
+color: #000000;
+font-family: Arial, Helvetica, sans-serif;
+font-size: 12px;
+}
+h1 {
+font-family: Arial, Helvetica, sans-serif;
+font-size: 30px;
+text-align: center;
+}
+h2 {
+font-family: Arial, Helvetica, sans-serif;
+font-size: 18px;
+text-align: center;
+}
+body {
+font-family: Arial, Helvetica, sans-serif;
+font-size: 12px;
+}
+</style>
+</head>
+<body>
+<h1>Team Information</h1>
+<h2>MARTUS Test Suite Results</h2>
+<table style="width:100%">
+<tr>
+<th>TestID</th>
+<th>Requirement Tested</th>
+<th>Component Tested</th>
+<th>Method</th>
+<th>Test Input</th>
+<th>Expected Outcome</th>
+<th>Actual Outcome</th>
+<th>Test Status</th>
+</tr>
+EOF
+
+#read from test case files and add info to test results display
+ANOTHERCOUNTER=1;
+FILES=testCases/*
+for f in $FILES; do
+    COUNTER=1
+    while read -r line; do
+        [[ "$line" =~ ^#.*$ ]] && continue
+           LINES[$COUNTER]=$line
+           ((COUNTER++))
+        
+    done < $f
+    
+    TESTCASE=${LINES[1]}
+    DESCRIPTION=${LINES[2]}
+    COMPONENT=${LINES[4]}
+    METHOD=${LINES[6]}
+    INPUT=${LINES[7]} 
+    EXPECTEDOUTPUT=${LINES[8]}
+
+
+  # add test information to HTML document
+  echo "<tr>" >> testresults.html
+  echo -n "<td>" >> testresults.html
+  echo -n $TESTCASE >> testresults.html
+  echo "</td>" >> testresults.html
+  echo -n "<td>" >> testresults.html
+  echo -n $DESCRIPTION >> testresults.html
+  echo "</td>" >> testresults.html
+  echo -n "<td>" >> testresults.html
+  echo -n $COMPONENT >> testresults.html
+  echo "</td>" >> testresults.html
+  echo -n "<td>" >> testresults.html
+  echo -n $METHOD >> testresults.html
+  echo "</td>" >> testresults.html
+  echo -n "<td>" >> testresults.html
+  echo -n $INPUT >> testresults.html
+  echo "</td>" >> testresults.html
+  echo -n "<td>" >> testresults.html
+  echo -n $EXPECTEDOUTPUT >> testresults.html
+  echo "</td>" >> testresults.html
+  echo -n "<td>" >> testresults.html
+  echo -n "${RESULTS[$ANOTHERCOUNTER]}" >> testresults.html
+  echo -n "<td>" >> testresults.html
+  
+  if [[ " ${RESULTS[$ANOTHERCOUNTER]} " =~ " ${ORACLES[$ANOTHERCOUNTER]} " ]]; then
+  echo -n "<font color="green">" >> testresults.html
+	echo -n "pass" >> testresults.html
+	echo -n "</font>" >> testresults.html
+  fi
+
+  if [[ ! " ${RESULTS[$ANOTHERCOUNTER]} " =~ " ${ORACLES[$ANOTHERCOUNTER]} " ]]; then
+	echo -n "<font color="red">" >> testresults.html    
+	echo -n "fail" >> testresults.html
+	echo -n "</font>" >> testresults.html
+  fi
+  echo "</td>" >> testresults.html
+  # echo "Actual Outcome" >> testresults.html
+  # echo "Test Status" >> testresults.html
+  echo "</tr>" >> testresults.html
+  ((ANOTHERCOUNTER++))
+done
+
+cat >> testresults.html << EOF
+</table>
+</body>
+</html>
+EOF
+
+xdg-open testresults.html
+exit 0
+
+
+
+
+
+
+
+
+
+  	
+
+
+
+
+

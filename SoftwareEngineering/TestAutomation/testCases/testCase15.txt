@@ -1,0 +1,16 @@
+# Test Case Number
+# Requirement
+# Component Path
+# Component being tested
+# Dependencies
+# Method being tested
+# Input (year,month,day;year,month,day)
+# Expected Output
+015
+The method should return an integer, that shows the year for the lower date
+project/src/
+org/hrvd/util/date/Flexidate
+project/src/org/hrvd/util/*/*.java
+getYear
+1,12,25;0,12,25
+1
