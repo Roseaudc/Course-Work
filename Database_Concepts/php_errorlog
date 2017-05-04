@@ -1,0 +1,160 @@
+[20-Feb-2017 10:22:06 CST6CDT] PHP Fatal error:  Uncaught Error: Call to undefined function myquery() in /home/donovan9/public_html/addTeamsrv.php:8
+Stack trace:
+#0 {main}
+  thrown in /home/donovan9/public_html/addTeamsrv.php on line 8
+[20-Feb-2017 20:34:58 CST6CDT] PHP Parse error:  syntax error, unexpected end of file in /home/donovan9/public_html/delPlayersrv.php on line 10
+[20-Feb-2017 20:35:48 CST6CDT] PHP Parse error:  syntax error, unexpected 'Player' (T_STRING) in /home/donovan9/public_html/delPlayersrv.php on line 3
+[20-Feb-2017 20:36:06 CST6CDT] PHP Parse error:  syntax error, unexpected end of file in /home/donovan9/public_html/delPlayersrv.php on line 10
+[20-Feb-2017 20:37:35 CST6CDT] PHP Parse error:  syntax error, unexpected '' (T_ENCAPSED_AND_WHITESPACE), expecting identifier (T_STRING) or variable (T_VARIABLE) or number (T_NUM_STRING) in /home/donovan9/public_html/delPlayersrv.php on line 3
+[20-Feb-2017 20:37:54 CST6CDT] PHP Parse error:  syntax error, unexpected '"', expecting identifier (T_STRING) or variable (T_VARIABLE) or number (T_NUM_STRING) in /home/donovan9/public_html/delPlayersrv.php on line 3
+[20-Feb-2017 20:38:50 CST6CDT] PHP Parse error:  syntax error, unexpected '=' in /home/donovan9/public_html/delPlayersrv.php on line 3
+[20-Feb-2017 20:39:17 CST6CDT] PHP Parse error:  syntax error, unexpected '=' in /home/donovan9/public_html/delPlayersrv.php on line 3
+[20-Feb-2017 20:52:13 CST6CDT] PHP Parse error:  syntax error, unexpected '"'"' (T_CONSTANT_ENCAPSED_STRING) in /home/donovan9/public_html/delPlayersrv.php on line 3
+[20-Feb-2017 20:53:09 CST6CDT] PHP Parse error:  syntax error, unexpected '"'"' (T_CONSTANT_ENCAPSED_STRING) in /home/donovan9/public_html/delPlayersrv.php on line 3
+[20-Feb-2017 21:11:38 CST6CDT] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home/donovan9/public_html/editPlayerclt.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/donovan9/public_html/editPlayerclt.php on line 7
+[20-Feb-2017 21:12:41 CST6CDT] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home/donovan9/public_html/editPlayerclt.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/donovan9/public_html/editPlayerclt.php on line 7
+[20-Feb-2017 21:15:50 CST6CDT] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home/donovan9/public_html/editPlayerclt.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/donovan9/public_html/editPlayerclt.php on line 7
+[20-Feb-2017 21:15:53 CST6CDT] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on boolean in /home/donovan9/public_html/editPlayerclt.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/donovan9/public_html/editPlayerclt.php on line 7
+[20-Feb-2017 21:38:33 CST6CDT] PHP Parse error:  syntax error, unexpected '"' in /home/donovan9/public_html/editPlayersrv.php on line 6
+[21-Feb-2017 09:39:39 CST6CDT] PHP Parse error:  syntax error, unexpected '' . $_REQUEST["Player"] . "'' (T_CONSTANT_ENCAPSED_STRING) in /home/donovan9/public_html/editPlayersrv.php on line 3
+[21-Feb-2017 09:45:23 CST6CDT] PHP Parse error:  syntax error, unexpected ''" . $_REQUEST["Player"] . "'' (T_CONSTANT_ENCAPSED_STRING) in /home/donovan9/public_html/editPlayersrv.php on line 3
+[21-Feb-2017 11:04:05 CST6CDT] PHP Parse error:  syntax error, unexpected 'where' (T_STRING) in /home/donovan9/public_html/editPlayersrv.php on line 5
+[21-Feb-2017 11:04:25 CST6CDT] PHP Parse error:  syntax error, unexpected 'where' (T_STRING) in /home/donovan9/public_html/editPlayersrv.php on line 5
+[01-Apr-2017 13:21:55 CST6CDT] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on null in /home/donovan9/public_html/editPlayerclt.php:7
+Stack trace:
+#0 {main}
+  thrown in /home/donovan9/public_html/editPlayerclt.php on line 7
+[01-Apr-2017 13:32:02 CST6CDT] PHP Parse error:  syntax error, unexpected '=' in /home/donovan9/public_html/editPlayerclt.php on line 5
+[01-Apr-2017 13:32:30 CST6CDT] PHP Parse error:  syntax error, unexpected 'editPlayersrv' (T_STRING) in /home/donovan9/public_html/editPlayerclt.php on line 12
+[01-Apr-2017 13:36:30 CST6CDT] PHP Parse error:  syntax error, unexpected 'editPlayersrv' (T_STRING) in /home/donovan9/public_html/editPlayerclt.php on line 12
+[01-Apr-2017 13:37:19 CST6CDT] PHP Parse error:  syntax error, unexpected 'editPlayersrv' (T_STRING) in /home/donovan9/public_html/editPlayerclt.php on line 12
+[01-Apr-2017 13:37:22 CST6CDT] PHP Parse error:  syntax error, unexpected 'editPlayersrv' (T_STRING) in /home/donovan9/public_html/editPlayerclt.php on line 12
+[01-Apr-2017 13:38:28 CST6CDT] PHP Parse error:  syntax error, unexpected 'editPlayersrv' (T_STRING) in /home/donovan9/public_html/editPlayerclt.php on line 12
+[01-Apr-2017 13:43:19 CST6CDT] PHP Parse error:  syntax error, unexpected 'editPlayersrv' (T_STRING) in /home/donovan9/public_html/editPlayerclt.php on line 11
+[01-Apr-2017 13:44:45 CST6CDT] PHP Parse error:  syntax error, unexpected 'editPlayersrv' (T_STRING) in /home/donovan9/public_html/editPlayerclt.php on line 11
+[01-Apr-2017 13:45:30 CST6CDT] PHP Parse error:  syntax error, unexpected 'editPlayersrv' (T_STRING) in /home/donovan9/public_html/editPlayerclt.php on line 11
+[01-Apr-2017 13:46:17 CST6CDT] PHP Parse error:  syntax error, unexpected 'editPlayersrv' (T_STRING) in /home/donovan9/public_html/editPlayerclt.php on line 11
+[01-Apr-2017 13:46:26 CST6CDT] PHP Parse error:  syntax error, unexpected 'editPlayersrv' (T_STRING) in /home/donovan9/public_html/editPlayerclt.php on line 11
+[01-Apr-2017 13:46:37 CST6CDT] PHP Parse error:  syntax error, unexpected 'editPlayersrv' (T_STRING) in /home/donovan9/public_html/editPlayerclt.php on line 11
+[01-Apr-2017 15:26:18 CST6CDT] PHP Parse error:  syntax error, unexpected '"';"' (T_CONSTANT_ENCAPSED_STRING) in /home/donovan9/public_html/editPlayersrv.php on line 7
+[01-Apr-2017 15:53:54 CST6CDT] PHP Parse error:  syntax error, unexpected 'where' (T_STRING) in /home/donovan9/public_html/editPlayerclt.php on line 3
+[02-Apr-2017 21:25:48 CST6CDT] PHP Parse error:  syntax error, unexpected '',"  $_REQUEST["number"] . "'' (T_CONSTANT_ENCAPSED_STRING), expecting ']' in /home/donovan9/public_html/addPlayersrv.php on line 4
+[02-Apr-2017 21:26:08 CST6CDT] PHP Parse error:  syntax error, unexpected ''," . $_REQUEST["number"] . "'' (T_CONSTANT_ENCAPSED_STRING), expecting ']' in /home/donovan9/public_html/addPlayersrv.php on line 4
+[02-Apr-2017 21:26:30 CST6CDT] PHP Parse error:  syntax error, unexpected ''," . $_REQUEST["number"] . "'' (T_CONSTANT_ENCAPSED_STRING), expecting ']' in /home/donovan9/public_html/addPlayersrv.php on line 4
+[02-Apr-2017 21:27:38 CST6CDT] PHP Parse error:  syntax error, unexpected ',', expecting ']' in /home/donovan9/public_html/addPlayersrv.php on line 4
+[02-Apr-2017 21:28:06 CST6CDT] PHP Parse error:  syntax error, unexpected ',', expecting ']' in /home/donovan9/public_html/addPlayersrv.php on line 4
+[02-Apr-2017 21:29:31 CST6CDT] PHP Parse error:  syntax error, unexpected ''," . $_REQUEST["number"] . "'' (T_CONSTANT_ENCAPSED_STRING), expecting ']' in /home/donovan9/public_html/addPlayersrv.php on line 4
+[02-Apr-2017 21:30:08 CST6CDT] PHP Parse error:  syntax error, unexpected ',', expecting ']' in /home/donovan9/public_html/addPlayersrv.php on line 4
+[02-Apr-2017 21:33:31 CST6CDT] PHP Parse error:  syntax error, unexpected ''," . $_REQUEST["number"] . "'' (T_CONSTANT_ENCAPSED_STRING), expecting ']' in /home/donovan9/public_html/addPlayersrv.php on line 4
+[02-Apr-2017 21:35:06 CST6CDT] PHP Parse error:  syntax error, unexpected ''," . $_REQUEST["number"] . ",' (T_CONSTANT_ENCAPSED_STRING), expecting ']' in /home/donovan9/public_html/addPlayersrv.php on line 4
+[02-Apr-2017 21:36:03 CST6CDT] PHP Parse error:  syntax error, unexpected ''," . $_REQUEST["number"] . "'' (T_CONSTANT_ENCAPSED_STRING), expecting ']' in /home/donovan9/public_html/addPlayersrv.php on line 4
+[02-Apr-2017 21:50:14 CST6CDT] PHP Parse error:  syntax error, unexpected '<' in /home/donovan9/public_html/addPlayersrv.php on line 20
+[02-Apr-2017 21:50:37 CST6CDT] PHP Parse error:  syntax error, unexpected '<' in /home/donovan9/public_html/addPlayersrv.php on line 20
+[02-Apr-2017 21:51:25 CST6CDT] PHP Parse error:  syntax error, unexpected '<' in /home/donovan9/public_html/addPlayersrv.php on line 21
+[02-Apr-2017 21:54:21 CST6CDT] PHP Parse error:  syntax error, unexpected '<' in /home/donovan9/public_html/addPlayersrv.php on line 21
+[02-Apr-2017 21:54:22 CST6CDT] PHP Parse error:  syntax error, unexpected '<' in /home/donovan9/public_html/addPlayersrv.php on line 21
+[02-Apr-2017 21:54:29 CST6CDT] PHP Parse error:  syntax error, unexpected '<' in /home/donovan9/public_html/addPlayersrv.php on line 21
+[02-Apr-2017 22:11:14 CST6CDT] PHP Parse error:  syntax error, unexpected ',', expecting ']' in /home/donovan9/public_html/addPlayersrv.php on line 3
+[02-Apr-2017 22:11:41 CST6CDT] PHP Parse error:  syntax error, unexpected ',', expecting ']' in /home/donovan9/public_html/addPlayersrv.php on line 3
+[02-Apr-2017 22:11:58 CST6CDT] PHP Parse error:  syntax error, unexpected ''," .  $_REQUEST["team"] . ",@' (T_CONSTANT_ENCAPSED_STRING), expecting ']' in /home/donovan9/public_html/addPlayersrv.php on line 4
+[02-Apr-2017 22:12:17 CST6CDT] PHP Parse error:  syntax error, unexpected ''," .  $_REQUEST["team"] . ",@' (T_CONSTANT_ENCAPSED_STRING), expecting ']' in /home/donovan9/public_html/addPlayersrv.php on line 4
+[02-Apr-2017 22:12:20 CST6CDT] PHP Parse error:  syntax error, unexpected ''," .  $_REQUEST["team"] . ",@' (T_CONSTANT_ENCAPSED_STRING), expecting ']' in /home/donovan9/public_html/addPlayersrv.php on line 4
+[02-Apr-2017 22:12:42 CST6CDT] PHP Parse error:  syntax error, unexpected ',', expecting ']' in /home/donovan9/public_html/addPlayersrv.php on line 3
+[02-Apr-2017 22:13:03 CST6CDT] PHP Parse error:  syntax error, unexpected ''," .  $_REQUEST["team"] . ",@' (T_CONSTANT_ENCAPSED_STRING), expecting ']' in /home/donovan9/public_html/addPlayersrv.php on line 5
+[02-Apr-2017 22:13:40 CST6CDT] PHP Parse error:  syntax error, unexpected ''," .  $_REQUEST["team"] . ",@' (T_CONSTANT_ENCAPSED_STRING), expecting ']' in /home/donovan9/public_html/addPlayersrv.php on line 5
+[02-Apr-2017 22:13:57 CST6CDT] PHP Parse error:  syntax error, unexpected ',', expecting ']' in /home/donovan9/public_html/addPlayersrv.php on line 3
+[02-Apr-2017 22:18:12 CST6CDT] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on null in /home/donovan9/public_html/addPlayersrv.php:6
+Stack trace:
+#0 {main}
+  thrown in /home/donovan9/public_html/addPlayersrv.php on line 6
+[02-Apr-2017 22:19:17 CST6CDT] PHP Parse error:  syntax error, unexpected '=' in /home/donovan9/public_html/addPlayersrv.php on line 7
+[02-Apr-2017 22:28:35 CST6CDT] PHP Fatal error:  Uncaught Error: Function name must be a string in /home/donovan9/public_html/addPlayersrv.php:6
+Stack trace:
+#0 {main}
+  thrown in /home/donovan9/public_html/addPlayersrv.php on line 6
+[05-Apr-2017 19:22:32 CST6CDT] PHP Fatal error:  Teams and League do not match up in /home/donovan9/public_html/addPlayersrv.php on line 37
+[05-Apr-2017 19:23:45 CST6CDT] PHP Fatal error:  Teams and League do not match up in /home/donovan9/public_html/addPlayersrv.php on line 37
+[05-Apr-2017 19:24:13 CST6CDT] PHP Fatal error:  Teams and League do not match up in /home/donovan9/public_html/addPlayersrv.php on line 37
+[05-Apr-2017 19:28:22 CST6CDT] PHP Fatal error:  Teams and League do not match up in /home/donovan9/public_html/addPlayersrv.php on line 37
+[05-Apr-2017 19:54:22 CST6CDT] PHP Parse error:  syntax error, unexpected '"' in /home/donovan9/public_html/addPlayersrv.php on line 3
+[05-Apr-2017 19:57:21 CST6CDT] PHP Fatal error:  Teams and League do not match up in /home/donovan9/public_html/addPlayersrv.php on line 37
+[05-Apr-2017 19:59:34 CST6CDT] PHP Fatal error:  Teams and League do not match up in /home/donovan9/public_html/addPlayersrv.php on line 45
+[05-Apr-2017 19:59:37 CST6CDT] PHP Fatal error:  Teams and League do not match up in /home/donovan9/public_html/addPlayersrv.php on line 45
+[05-Apr-2017 20:00:49 CST6CDT] PHP Fatal error:  Teams and League do not match up in /home/donovan9/public_html/addPlayersrv.php on line 47
+[05-Apr-2017 20:03:10 CST6CDT] PHP Fatal error:  Teams and League do not match up in /home/donovan9/public_html/addPlayersrv.php on line 47
+[05-Apr-2017 20:05:02 CST6CDT] PHP Fatal error:  Teams and League do not match up in /home/donovan9/public_html/addPlayersrv.php on line 38
+[05-Apr-2017 20:05:04 CST6CDT] PHP Fatal error:  Teams and League do not match up in /home/donovan9/public_html/addPlayersrv.php on line 38
+[05-Apr-2017 20:05:12 CST6CDT] PHP Fatal error:  Teams and League do not match up in /home/donovan9/public_html/addPlayersrv.php on line 38
+[05-Apr-2017 20:06:38 CST6CDT] PHP Parse error:  syntax error, unexpected '=' in /home/donovan9/public_html/addPlayersrv.php on line 3
+[05-Apr-2017 20:07:48 CST6CDT] PHP Fatal error:  Teams and League do not match up in /home/donovan9/public_html/addPlayersrv.php on line 44
+[05-Apr-2017 21:00:58 CST6CDT] PHP Parse error:  syntax error, unexpected '' . $_REQUEST["name"] . "'' (T_CONSTANT_ENCAPSED_STRING) in /home/donovan9/public_html/addPlayersrv.php on line 4
+[05-Apr-2017 21:05:00 CST6CDT] PHP Parse error:  syntax error, unexpected '"] . "' (T_CONSTANT_ENCAPSED_STRING), expecting ']' in /home/donovan9/public_html/addPlayersrv.php on line 4
+[05-Apr-2017 21:37:04 CST6CDT] PHP Fatal error:  Teams and League do not match up in /home/donovan9/public_html/addPlayersrv.php on line 31
+[05-Apr-2017 21:37:31 CST6CDT] PHP Fatal error:  Teams and League do not match up in /home/donovan9/public_html/addPlayersrv.php on line 37
+[05-Apr-2017 21:38:18 CST6CDT] PHP Fatal error:  Teams and League do not match up in /home/donovan9/public_html/addPlayersrv.php on line 37
+[05-Apr-2017 22:30:41 CST6CDT] PHP Parse error:  syntax error, unexpected '$_REQUEST' (T_VARIABLE) in /home/donovan9/public_html/addPlayersrv.php on line 4
+[05-Apr-2017 22:57:35 CST6CDT] PHP Parse error:  syntax error, unexpected ',' in /home/donovan9/public_html/addPlayersrv.php on line 4
+[09-Apr-2017 15:24:38 CST6CDT] PHP Parse error:  syntax error, unexpected '.0' (T_DNUMBER), expecting ',' or ')' in /home/donovan9/public_html/addPlayersrv.php on line 15
+[09-Apr-2017 15:40:14 CST6CDT] PHP Parse error:  syntax error, unexpected '' . $_REQUEST["name"] . "'' (T_CONSTANT_ENCAPSED_STRING) in /home/donovan9/public_html/addPlayersrv.php on line 4
+[09-Apr-2017 15:40:29 CST6CDT] PHP Parse error:  syntax error, unexpected '"', expecting identifier (T_STRING) or variable (T_VARIABLE) or number (T_NUM_STRING) in /home/donovan9/public_html/addPlayersrv.php on line 4
+[09-Apr-2017 15:41:41 CST6CDT] PHP Parse error:  syntax error, unexpected '' . $_REQUEST["name"] . "'' (T_CONSTANT_ENCAPSED_STRING) in /home/donovan9/public_html/addPlayersrv.php on line 4
+[09-Apr-2017 15:42:25 CST6CDT] PHP Parse error:  syntax error, unexpected ''. $_REQUEST["name"] . "'' (T_CONSTANT_ENCAPSED_STRING) in /home/donovan9/public_html/addPlayersrv.php on line 4
+[09-Apr-2017 15:45:22 CST6CDT] PHP Parse error:  syntax error, unexpected '$_REQUEST' (T_VARIABLE) in /home/donovan9/public_html/addPlayersrv.php on line 4
+[09-Apr-2017 18:22:24 CST6CDT] PHP Parse error:  syntax error, unexpected '$servername' (T_VARIABLE) in /home/donovan9/public_html/addPlayersrv.php on line 13
+[09-Apr-2017 18:43:47 CST6CDT] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on null in /home/donovan9/public_html/addPlayersrv.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/donovan9/public_html/addPlayersrv.php on line 26
+[09-Apr-2017 18:47:13 CST6CDT] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on null in /home/donovan9/public_html/addPlayersrv.php:26
+Stack trace:
+#0 {main}
+  thrown in /home/donovan9/public_html/addPlayersrv.php on line 26
+[09-Apr-2017 18:48:02 CST6CDT] PHP Fatal error:  Uncaught Error: Call to undefined function myquery() in /home/donovan9/public_html/addPlayersrv.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/donovan9/public_html/addPlayersrv.php on line 20
+[09-Apr-2017 19:13:17 CST6CDT] PHP Fatal error:  Uncaught Error: Call to undefined function myquery() in /home/donovan9/public_html/addPlayersrv.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/donovan9/public_html/addPlayersrv.php on line 11
+[09-Apr-2017 19:21:13 CST6CDT] PHP Fatal error:  Uncaught Error: Call to undefined function myquery() in /home/donovan9/public_html/addPlayersrv.php:21
+Stack trace:
+#0 {main}
+  thrown in /home/donovan9/public_html/addPlayersrv.php on line 21
+[09-Apr-2017 19:32:06 CST6CDT] PHP Fatal error:  Uncaught Error: Call to undefined function myquery() in /home/donovan9/public_html/addPlayersrv.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/donovan9/public_html/addPlayersrv.php on line 20
+[09-Apr-2017 19:32:24 CST6CDT] PHP Parse error:  syntax error, unexpected '$name' (T_VARIABLE) in /home/donovan9/public_html/addPlayersrv.php on line 3
+[09-Apr-2017 19:32:37 CST6CDT] PHP Fatal error:  Uncaught Error: Call to undefined function myquery() in /home/donovan9/public_html/addPlayersrv.php:20
+Stack trace:
+#0 {main}
+  thrown in /home/donovan9/public_html/addPlayersrv.php on line 20
+[09-Apr-2017 19:47:59 CST6CDT] PHP Parse error:  syntax error, unexpected 'myquery' (T_STRING) in /home/donovan9/public_html/addPlayersrv.php on line 11
+[09-Apr-2017 19:54:18 CST6CDT] PHP Parse error:  syntax error, unexpected 'controlDepth' (T_STRING) in /home/donovan9/public_html/addPlayersrv.php on line 10
+[09-Apr-2017 19:54:42 CST6CDT] PHP Parse error:  syntax error, unexpected '$name' (T_VARIABLE) in /home/donovan9/public_html/addPlayersrv.php on line 10
+[10-Apr-2017 10:23:40 CST6CDT] PHP Parse error:  syntax error, unexpected end of file in /home/donovan9/public_html/addPlayersrv.php on line 31
+[10-Apr-2017 10:25:37 CST6CDT] PHP Parse error:  syntax error, unexpected end of file in /home/donovan9/public_html/addPlayersrv.php on line 36
+[10-Apr-2017 10:28:23 CST6CDT] PHP Fatal error:  Uncaught Error: Call to a member function fetch_assoc() on null in /home/donovan9/public_html/addPlayersrv.php:11
+Stack trace:
+#0 {main}
+  thrown in /home/donovan9/public_html/addPlayersrv.php on line 11
+[19-Apr-2017 17:20:44 CST6CDT] PHP Parse error:  syntax error, unexpected '$result' (T_VARIABLE) in /home/donovan9/public_html/view.php on line 13
+[19-Apr-2017 17:21:09 CST6CDT] PHP Parse error:  syntax error, unexpected '$result' (T_VARIABLE) in /home/donovan9/public_html/view.php on line 13
+[19-Apr-2017 17:21:14 CST6CDT] PHP Parse error:  syntax error, unexpected '$result' (T_VARIABLE) in /home/donovan9/public_html/view.php on line 13
+[19-Apr-2017 17:21:16 CST6CDT] PHP Parse error:  syntax error, unexpected '$result' (T_VARIABLE) in /home/donovan9/public_html/view.php on line 13
+[19-Apr-2017 17:21:24 CST6CDT] PHP Parse error:  syntax error, unexpected '$result' (T_VARIABLE) in /home/donovan9/public_html/view.php on line 13
+[19-Apr-2017 17:21:52 CST6CDT] PHP Parse error:  syntax error, unexpected '<', expecting end of file in /home/donovan9/public_html/view.php on line 3
+[19-Apr-2017 17:21:54 CST6CDT] PHP Parse error:  syntax error, unexpected '<', expecting end of file in /home/donovan9/public_html/view.php on line 3

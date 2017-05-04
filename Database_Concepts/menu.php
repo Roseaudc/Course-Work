@@ -1,0 +1,1 @@
+<a href='listTeams.php'>Teams</a> <a href = 'listPlayers.php'>Players</a> <a href = 'listOwners.php'>Owners</a> <a href = 'listStandings.php'>Standings</a> <a href = 'listMVPS.php'>MVP</a> <a href = 'listCoaches.php'>Coaches</a> <a href = 'listChampionships.php'>Championships</a> <a href = 'view.php'>Coach&Player</a> <a href = 'report.php'>Report</a>
